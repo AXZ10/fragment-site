@@ -1,39 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fragmented</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #0a0a0a;
-      color: #ffffff;
-      font-family: 'Courier New', Courier, monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-    }
-    .main {
-      font-size: 1.4rem;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .highlight {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.8rem;
-      margin-top: 20px;
-    }
+      box-sizing: border-box;
+    }html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+  color: #fff;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.9), #000 80%);
+}
+
+.glitch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.glitch h1 {
+  font-size: 2rem;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  animation: flicker 3s infinite;
+}
+
+.glitch p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  font-style: italic;
+  animation: fadein 6s ease-in-out;
+}
+
+.symbol {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  opacity: 0.08;
+  letter-spacing: 30px;
+  user-select: none;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  10% { opacity: 0.9; }
+  20% { opacity: 0.95; }
+  30% { opacity: 0.85; }
+  40% { opacity: 1; }
+  50% { opacity: 0.8; }
+  60% { opacity: 0.9; }
+  70% { opacity: 0.95; }
+  80% { opacity: 1; }
+  90% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 0.85; transform: translateY(0); }
+}
+
   </style>
 </head>
 <body>
-  <div class="main">
-    ⟦ 𝐇𝐮𝐦𝐚𝐧 𝐏𝐫𝐨𝐭𝐨𝐜𝐨𝐥 | 𝐄𝐧𝐜𝐫𝐲𝐩𝐭𝐞𝐝 ⟧
-    <div class="highlight">
-      ⍟ 𝙊𝙣𝙡𝙮 𝙩𝙝𝙤𝙨𝙚 𝙬𝙝𝙤 𝙘𝙖𝙣 𝙘𝙧𝙖𝙘𝙠 𝙢𝙚, 𝙛𝙞𝙣𝙙 𝙢𝙚.
-    </div>
+  <div class="background"></div>
+  <div class="glitch">
+    <h1>⟦ Human Protocol | Encrypted ⟧</h1>
+    <p>⍟ Only those who can crack me, find me.</p>
   </div>
+  <div class="symbol">Ξ Σ Ψ Δ Ω</div>
 </body>
 </html>
