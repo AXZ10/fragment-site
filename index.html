@@ -64,6 +64,27 @@
   user-select: none;
   letter-spacing: 0.6rem;
   white-space: nowrap;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.symbol:hover + .tooltip {
+  opacity: 1;
 }
 
 @keyframes flicker {
@@ -94,5 +115,6 @@
     <p>⍟ Only those who can crack me, find me.</p>
   </div>
   <div class="symbol">Ξ Σ Ψ Δ Ω</div>
+  <div class="tooltip">Hint: Awakening through fragments — Mind. Force. Soul. Change. Fate.</div>
 </body>
 </html>
